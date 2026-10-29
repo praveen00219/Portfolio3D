@@ -3,7 +3,7 @@
 export const profile = {
   name: "Praveen",
   role: "Software Development Engineer",
-  roles: ["Full Stack Developer", "React & TypeScript Engineer", "Node.js & Supabase Developer", "Software Development Engineer"],
+  roles: ["Full Stack Developer", "Dot-Net & MongoDb Developer", "React & TypeScript Engineer",  "Node.js & Supabase Developer", "Software Development Engineer"],
   tagline:
     "I build secure and scalable web apps — from clean React UIs to APIs, databases and payments.",
   years: "2+",
@@ -207,8 +207,8 @@ export const education = [
     ],
     link: "https://drive.google.com/file/d/1AFr3Ad4WNnLIt6MOIuU5Q0hKQz9XZDov/view?usp=sharing",
   },
-  { title: "MSc (Mathematics)", place: "Vardhman Mahaveer Open University, Kota", period: "Aug 2022 — Oct 2025" },
-  { title: "BSc (Mathematics)", place: "Maharshi Dayanand Saraswati University, Ajmer", period: "Aug 2017 — Oct 2021" },
+  { title: "MS", place: "Vardhman Mahaveer Open University, Kota", period: "Aug 2022 — Oct 2025" },
+  { title: "BS", place: "Maharshi Dayanand Saraswati University, Ajmer", period: "Aug 2017 — Oct 2021" },
   { title: "Senior Secondary (12th) — 83.40%", place: "Board of Secondary Education, Rajasthan", period: "2016 — 2017" },
   { title: "Secondary (10th) — 83.33%", place: "Board of Secondary Education, Rajasthan", period: "2014 — 2015" },
 ];
