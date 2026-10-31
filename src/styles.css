@@ -210,7 +210,7 @@ main { position: relative; z-index: 1; }
 .text-link:hover { text-decoration: underline; }
 
 /* Projects */
-.filters { display: flex; gap: 8px; margin-bottom: 28px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 .filters button {
   font-family: inherit; font-size: 0.9rem; padding: 9px 20px; border-radius: 999px; cursor: pointer;
   background: var(--glass); color: var(--muted); border: 1px solid var(--line); backdrop-filter: blur(10px); transition: all 0.2s;
@@ -457,7 +457,7 @@ a.jc-logo:hover { transform: scale(1.06); }
 }
 
 /* Projects v2: 3D carousel */
-.filters button { display: inline-flex; align-items: center; gap: 8px; }
+.filters button { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .f-count { font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; background: rgba(var(--fg-rgb), 0.08); }
 .filters button.on .f-count { background: rgba(11, 11, 26, 0.18); }
 .carousel { position: relative; outline: none; padding: 10px 0 6px; }
@@ -495,6 +495,25 @@ a.jc-logo:hover { transform: scale(1.06); }
 .cr-body p { color: var(--muted); font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.3em; }
 .cr-card:not(.active) .project-links { visibility: hidden; }
 
+/* Generated cover for projects without a screenshot */
+.cr-cover { position: relative; display: block; place-items: normal; font-size: 1rem; font-weight: 400; }
+.cr-cover::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(var(--fg-rgb), 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--fg-rgb), 0.07) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: radial-gradient(circle at 75% 35%, #000, transparent 70%); mask-image: radial-gradient(circle at 75% 35%, #000, transparent 70%);
+}
+.cr-cover-in { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 48px 24px 22px; }
+.cr-cover-in strong {
+  font: 700 1.85rem/1.1 var(--head); max-width: 85%;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.cr-cover-tag { color: var(--text-2); font-size: 0.95rem; }
+.cr-cover-stack { display: flex; gap: 8px; margin-top: 10px; }
+.cr-cover-stack span {
+  width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px;
+  background: rgba(var(--surface-rgb), 0.7); border: 1px solid var(--line);
+}
+
 .cr-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; flex-wrap: wrap; }
 .cr-arrow {
   width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.15rem; color: var(--text);
@@ -515,8 +534,13 @@ a.jc-logo:hover { transform: scale(1.06); }
 @media (max-width: 560px) {
   .cr-stage { height: calc(var(--card) * 1.38); }
   .cr-controls { gap: 12px; }
-  .cr-dots { order: 3; width: 100%; justify-content: center; }
+  .cr-dots { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; row-gap: 8px; }
   .cr-body { padding: 14px 16px 18px; }
+  .cr-cover-in { padding: 40px 16px 14px; gap: 4px; }
+  .cr-cover-in strong { font-size: 1.35rem; }
+  .cr-cover-tag { font-size: 0.85rem; }
+  .cr-cover-stack { margin-top: 6px; gap: 6px; }
+  .cr-cover-stack span { width: 28px; height: 28px; border-radius: 8px; }
   .cr-body h3 { font-size: 1.15rem; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ProjectCover from "./ProjectCover";
 
 // `off` is this card's signed distance from the active card; `number` is its position in the full (unfiltered) list.
 export default function ProjectCard({ p, off, side, card, step, number, onSelect }) {
@@ -23,7 +24,7 @@ export default function ProjectCard({ p, off, side, card, step, number, onSelect
       style={{ zIndex: 20 - abs, pointerEvents: hidden ? "none" : "auto" }}
     >
       <div className="cr-img">
-        {p.img ? <img src={p.img} alt={p.name} draggable={false} /> : <div className="img-fallback">{p.name.split(" ")[0]}</div>}
+        {p.img ? <img src={p.img} alt={p.name} draggable={false} /> : <ProjectCover p={p} />}
         <span className="pill type">{p.type}</span>
         <span className="cr-num">{String(number).padStart(2, "0")}</span>
       </div>
@@ -37,7 +38,7 @@ export default function ProjectCard({ p, off, side, card, step, number, onSelect
             </a>
           )}
           <a href={p.code} target="_blank" rel="noreferrer" tabIndex={isActive ? 0 : -1}>
-            Code ↗
+            GitHub ↗
           </a>
         </div>
       </div>

@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { reveal } from "../../lib/motion";
+import { CATEGORIES, inCategory } from "../../lib/projects";
 import { projects } from "../../data";
 
 export default function ProjectFilters({ filter, setFilter }) {
   return (
     <motion.div className="filters" {...reveal}>
-      {["All", "MERN", "React"].map((f) => (
+      {CATEGORIES.map((f) => (
         <button key={f} className={filter === f ? "on" : ""} onClick={() => setFilter(f)}>
           {f}
-          <span className="f-count">{f === "All" ? projects.length : projects.filter((p) => p.type === f).length}</span>
+          <span className="f-count">{projects.filter((p) => inCategory(p, f)).length}</span>
         </button>
       ))}
     </motion.div>

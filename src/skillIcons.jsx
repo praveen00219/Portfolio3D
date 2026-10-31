@@ -4,6 +4,7 @@ import {
   siPostgresql, siSupabase, siMongodb, siFirebase, siPrisma, siCloudinary, siAmazonwebservices,
   siGit, siGithub, siGithubactions, siBitbucket, siDocker, siPostman, siSwagger,
   siLinkedin, siLeetcode, siHackerrank, siInstagram,
+  siExpo, siVite, siGooglegemini, siOpenai, siClaude, siRazorpay, siReactquery, siPython, siFastapi, siMysql, siGooglechrome,
 } from "simple-icons";
 
 // Skill / social name → brand icon. Skills without a brand icon get a text monogram instead.
@@ -17,6 +18,9 @@ const map = {
   Git: siGit, GitHub: siGithub, "GitHub Actions": siGithubactions, Bitbucket: siBitbucket, Docker: siDocker,
   Postman: siPostman, Swagger: siSwagger,
   LinkedIn: siLinkedin, LeetCode: siLeetcode, HackerRank: siHackerrank, Instagram: siInstagram,
+  "React Native": siReact, Expo: siExpo, Vite: siVite, "Google Gemini": siGooglegemini, OpenAI: siOpenai, Claude: siClaude,
+  Razorpay: siRazorpay, "TanStack Query": siReactquery, Python: siPython, FastAPI: siFastapi, MySQL: siMysql,
+  "Chrome Extension": siGooglechrome,
 };
 
 // Dark logos get a light colour so they stay visible on the space background.

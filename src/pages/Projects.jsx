@@ -6,11 +6,12 @@ import ProjectCard from "../components/projects/ProjectCard";
 import CarouselControls from "../components/projects/CarouselControls";
 import { useCarouselSize } from "../hooks/useCarouselSize";
 import { reveal } from "../lib/motion";
+import { inCategory } from "../lib/projects";
 import { projects } from "../data";
 
 export default function Projects({ id }) {
   const [filter, setFilter] = useState("All");
-  const list = projects.filter((p) => filter === "All" || p.type === filter);
+  const list = projects.filter((p) => inCategory(p, filter));
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const { card, step, side } = useCarouselSize();
@@ -79,7 +80,7 @@ export default function Projects({ id }) {
       </motion.div>
 
       <motion.p className="more" {...reveal}>
-        Drag, swipe or use ← → keys · 60+ more projects on{" "}
+        · 60+ more projects on{" "}
         <a href="https://github.com/praveen00219" target="_blank" rel="noreferrer">
           GitHub ↗
         </a>
