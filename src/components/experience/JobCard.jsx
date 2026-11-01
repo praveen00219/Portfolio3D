@@ -2,12 +2,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { reveal } from "../../lib/motion";
 import CompanyLogo from "../common/CompanyLogo";
+import { periodDuration } from "../../lib/duration";
 
 export default function JobCard({ job, index }) {
   const [open, setOpen] = useState(false);
   const SHOW = 3;
   const visible = open ? job.points : job.points.slice(0, SHOW);
   const hidden = job.points.length - SHOW;
+  const dur = periodDuration(job.period);
   return (
     <motion.article className={`job-card${job.current ? " current" : ""}`} {...reveal} transition={{ ...reveal.transition, delay: index * 0.1 }}>
       <span className="tl-node">
@@ -35,7 +37,10 @@ export default function JobCard({ job, index }) {
                 <span className="dot" /> Current
               </span>
             )}
-            <span className="jc-period">{job.period}</span>
+            <span className="jc-period">
+              {job.period}
+              {dur && <span className="jc-dur"> · {dur}</span>}
+            </span>
           </div>
         </header>
 

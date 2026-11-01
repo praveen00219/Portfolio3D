@@ -355,6 +355,7 @@ a.jc-logo:hover { transform: scale(1.06); }
   font-size: 0.8rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
   background: rgba(var(--fg-rgb), 0.05); border: 1px solid var(--line);
 }
+.jc-dur { color: var(--cyan); }
 .live {
   display: inline-flex; align-items: center; gap: 7px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: #34d399;
@@ -398,7 +399,7 @@ a.jc-logo:hover { transform: scale(1.06); }
   .tl-node span { width: 9px; height: 9px; }
   .job-inner { padding: 22px 18px; }
   .jc-head { grid-template-columns: auto 1fr; gap: 14px; }
-  .jc-when { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; }
+  .jc-when { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
   .jc-logo { width: 48px; height: 48px; font-size: 1rem; border-radius: 13px; }
   .jc-title h3 { font-size: 1.15rem; }
   .jc-tags { margin-left: 0; }
